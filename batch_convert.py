@@ -16,7 +16,7 @@ def batch_convert(input_files, output_dir, format):
     for input_file in tqdm(input_files):
         max_threads.acquire()
 
-        thread = threading.Thread(target=convert_to_mp3, args=(input_file, output_dir, format))
+        thread = threading.Thread(target=convert, args=(input_file, output_dir, format))
         thread.start()
         threads.append(thread)
 
