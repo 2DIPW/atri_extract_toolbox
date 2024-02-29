@@ -1,12 +1,10 @@
 # ATRI Extract Toolbox
 此仓库是对视觉小说游戏《ATRI -My Dear Moments-》资源包结构和解包所需工具的总结与索引，并附带几个用于处理解包资源的脚本。
 ## 免责声明
-* 游戏内容受到版权法律和国际公约的保护，任何未经授权的复制和公开传播均构成对原作者、开发商、发行商等的权利侵害，可能使你受到民事及刑事制裁。
+* 游戏内容受到版权法律和国际公约的保护，任何未经授权的复制和公开传播均构成对原作者、开发商、发行商等的权利侵害。
+* 解包内容仅用于个人欣赏与学习，严禁将解包内容用于任何商业和盈利活动。
 * 本仓库为开源项目的总结与索引，仅供相关技术的学习与交流，不提供游戏本体及任何解包资源文件。
-* 如果你打算参考本仓库进行游戏解包，则代表你认同：
-  * 解包内容仅用于个人欣赏与学习，不得擅自公开传播。
-  * 严禁将解包内容用于任何商业和盈利活动。
-  * 本README已尽到劝导义务，任何由于不当使用解包内容带来的法律纠纷均由使用者自行承担，与本仓库维护者无关。
+* 本README已尽到劝导义务，任何由于不当使用解包内容带来的纠纷均由使用者自行承担。
 
 ## 游戏解包
 PC版游戏本体购买：[Steam](https://store.steampowered.com/app/1230140/ATRI_My_Dear_Moments/) | [DMM](https://dlsoft.dmm.com/detail/aniplex_0003/) | [DLsite](https://www.dlsite.com/soft/work/=/product_id/VJ014002.html)
@@ -98,7 +96,7 @@ PC版游戏本体购买：[Steam](https://store.steampowered.com/app/1230140/ATR
 
 ## 本仓库附带工具使用方法
 ### batch_convert.py
-此脚本用于多线程批量转换解包音频文件
+此脚本用于多线程批量转换解包音频文件，**需要正确部署 ffmpeg 并将其加入环境变量**。
 ```shell
 python batch_convert.py -f mp3 -t 16
 ```
@@ -109,7 +107,9 @@ python batch_convert.py -f mp3 -t 16
 - `-t` | `--thread`: 线程数。默认值：16
 
 ### parse_script.py
-此脚本用于将 FreeMote 反编译得到的 json 剧本文件解析为可读的表格格式，可直接作为[Novel2Anki]()的输入数据。
+此脚本用于将 <a href="https://github.com/UlyssesWu/FreeMote">FreeMote</a> 反编译得到的 json 剧本文件解析为可读的表格格式，可直接作为 [Novel2Anki](https://github.com/2DIPW/novel2anki) 的输入数据。
+
+> FreeMote 反编译 scn 的方法：将 scn 文件拖拽至 PsbDecompile.exe 上。
 
 格式为一句一行，**第1列为角色，第2列为日文原文，第3列为译文，第4列为对应的语音文件名**，默认列与列之间以制表符分隔。
 ```shell
